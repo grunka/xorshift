@@ -3,6 +3,7 @@ package com.grunka.random.xorshift;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,9 +14,21 @@ import java.util.Random;
 public class XORShiftRandomTest {
 
     @Test
-    public void name() throws Exception {
-        Random random = new XORShift128Plus();
-        Path path = Paths.get("random.out");
+    public void xorshift64star() throws Exception {
+        dumpData(new XORShift64Star(), Paths.get("random.64star.out"));
+    }
+
+    @Test
+    public void xorshift1024star() throws Exception {
+        dumpData(new XORShift1024Star(), Paths.get("random.1024star.out"));
+    }
+
+    @Test
+    public void xorshift128plus() throws Exception {
+        dumpData(new XORShift128Plus(), Paths.get("random.128plus.out"));
+    }
+
+    private void dumpData(Random random, Path path) throws IOException {
         Files.deleteIfExists(path);
         Files.createFile(path);
         System.out.println("path.toRealPath() = " + path.toRealPath());
