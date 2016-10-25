@@ -1,4 +1,4 @@
-package com.grunka.xorshift;
+package com.grunka.random.xorshift;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -14,7 +14,7 @@ public class XORShiftRandomTest {
 
     @Test
     public void name() throws Exception {
-        Random random = XORShiftRandom.create128Plus();
+        Random random = new XORShiftPlus128();
         Path path = Paths.get("random.out");
         Files.deleteIfExists(path);
         Files.createFile(path);
