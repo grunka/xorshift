@@ -38,7 +38,7 @@ public class XORShiftRandomTest {
         Files.createFile(path);
         System.out.println("path.toRealPath() = " + path.toRealPath());
         byte[] fourK = new byte[4 * 1024];
-        for (int i = 0; i < 1024 * 1024; i++) {
+        for (int i = 0; i < 2 * 1024 * 1024; i++) {
             random.nextBytes(fourK);
             Files.write(path, fourK, StandardOpenOption.APPEND);
         }
