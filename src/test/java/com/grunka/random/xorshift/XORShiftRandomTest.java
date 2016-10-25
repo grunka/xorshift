@@ -14,6 +14,16 @@ import java.util.Random;
 public class XORShiftRandomTest {
 
     @Test
+    public void xorshift128() throws Exception {
+        dumpData(new XORShift128(), Paths.get("random.128.out"));
+    }
+
+    @Test
+    public void xorshift128plus() throws Exception {
+        dumpData(new XORShift128Plus(), Paths.get("random.128plus.out"));
+    }
+
+    @Test
     public void xorshift64star() throws Exception {
         dumpData(new XORShift64Star(), Paths.get("random.64star.out"));
     }
@@ -21,11 +31,6 @@ public class XORShiftRandomTest {
     @Test
     public void xorshift1024star() throws Exception {
         dumpData(new XORShift1024Star(), Paths.get("random.1024star.out"));
-    }
-
-    @Test
-    public void xorshift128plus() throws Exception {
-        dumpData(new XORShift128Plus(), Paths.get("random.128plus.out"));
     }
 
     private void dumpData(Random random, Path path) throws IOException {
