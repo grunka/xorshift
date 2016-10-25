@@ -1,13 +1,13 @@
 package com.grunka.random.xorshift;
 
-public class XORShiftStar64 extends XORShiftBase {
+public class XORShift64Star extends XORShiftBase {
     private long x;
 
-    public XORShiftStar64() {
+    public XORShift64Star() {
         super();
     }
 
-    public XORShiftStar64(long seed) {
+    public XORShift64Star(long seed) {
         super(seed);
     }
 

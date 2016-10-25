@@ -14,7 +14,7 @@ public class XORShiftRandomTest {
 
     @Test
     public void name() throws Exception {
-        Random random = new XORShiftPlus128();
+        Random random = new XORShift128Plus();
         Path path = Paths.get("random.out");
         Files.deleteIfExists(path);
         Files.createFile(path);
