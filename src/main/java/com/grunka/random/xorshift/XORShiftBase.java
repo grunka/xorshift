@@ -41,13 +41,20 @@ abstract class XORShiftBase extends Random {
                 bitsStillToTake = bitsStillToTake - currentRemainingRandomBits;
             }
 
-            int mask = ((1 << 31) >> (bitsToTake - 1)) >>> (32 - bitsToTake);
+            int mask = getBitMask(bitsToTake);
             result = result | ((int) (currentRandomBits >>> (currentRemainingRandomBits - bitsToTake))) & mask;
             result = result << bitsStillToTake;
 
             currentRemainingRandomBits -= bitsToTake;
         }
         return result;
+    }
+
+    static int getBitMask(int bitsToTake) {
+        if (bitsToTake == 0) {
+            return 0;
+        }
+        return ((1 << 31) >> (bitsToTake - 1)) >>> (32 - bitsToTake);
     }
 
     private void ensureBits() {
