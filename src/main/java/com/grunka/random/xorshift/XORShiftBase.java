@@ -51,8 +51,11 @@ abstract class XORShiftBase extends Random {
     }
 
     static int getBitMask(int bitsToTake) {
-        if (bitsToTake == 0) {
-            return 0;
+        if (bitsToTake < 1) {
+            throw new IllegalArgumentException("Cannot mask zero or less bits");
+        }
+        if (bitsToTake > 32) {
+            throw new IllegalArgumentException("Cannot mask more than 32 bits");
         }
         return ((1 << 31) >> (bitsToTake - 1)) >>> (32 - bitsToTake);
     }
