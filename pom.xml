@@ -4,10 +4,37 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xorshift</artifactId>
     <groupId>com.grunka.random.xorshift</groupId>
+    <artifactId>xorshift</artifactId>
     <version>1.2-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
+    <name>xorshift</name>
+    <description>Implementations of a couple of xorshift PRNGs</description>
+    <url>https://github.com/grunka/xorshift</url>
+    
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
 
+    <developers>
+        <developer>
+            <name>John Wästerlund</name>
+            <email>john@grunka.com</email>
+            <organization>Grunka</organization>
+            <organizationUrl>https://github.com/grunka/</organizationUrl>
+        </developer>
+    </developers>
+    
+    <scm>
+        <connection>scm:git:git://github.com/grunka/xorshift.git</connection>
+        <developerConnection>scm:git:ssh://github.com:grunka/xorshift.git</developerConnection>
+        <url>http://github.com/grunka/xorshift/tree/master</url>
+    </scm>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
