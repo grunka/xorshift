@@ -19,6 +19,12 @@
         </license>
     </licenses>
 
+    <scm>
+        <connection>scm:git:git://github.com/grunka/xorshift.git</connection>
+        <developerConnection>scm:git:ssh://github.com:grunka/xorshift.git</developerConnection>
+        <url>http://github.com/grunka/xorshift/tree/master</url>
+    </scm>
+
     <developers>
         <developer>
             <name>John Wästerlund</name>
@@ -36,12 +42,17 @@
 
     <profiles>
         <profile>
+            <id>github</id>
+            <distributionManagement>
+               <repository>
+                 <id>github</id>
+                 <name>GitHub grunka Apache Maven Packages</name>
+                 <url>https://maven.pkg.github.com/grunka/xorshift</url>
+               </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
             <id>release</id>
-            <scm>
-                <connection>scm:git:git://github.com/grunka/xorshift.git</connection>
-                <developerConnection>scm:git:ssh://github.com:grunka/xorshift.git</developerConnection>
-                <url>http://github.com/grunka/xorshift/tree/master</url>
-            </scm>
             <distributionManagement>
                 <snapshotRepository>
                     <id>ossrh</id>
