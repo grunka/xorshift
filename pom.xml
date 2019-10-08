@@ -28,12 +28,6 @@
         </developer>
     </developers>
 
-    <scm>
-        <connection>scm:git:git://github.com/grunka/xorshift.git</connection>
-        <developerConnection>scm:git:ssh://github.com:grunka/xorshift.git</developerConnection>
-        <url>http://github.com/grunka/xorshift/tree/master</url>
-    </scm>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -43,6 +37,11 @@
     <profiles>
         <profile>
             <id>release</id>
+            <scm>
+                <connection>scm:git:git://github.com/grunka/xorshift.git</connection>
+                <developerConnection>scm:git:ssh://github.com:grunka/xorshift.git</developerConnection>
+                <url>http://github.com/grunka/xorshift/tree/master</url>
+            </scm>
             <distributionManagement>
                 <snapshotRepository>
                     <id>ossrh</id>
